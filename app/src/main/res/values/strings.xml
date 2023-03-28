@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">EncDecApp</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="enter_your_text">Enter your text</string>
+    <string name="key_sizes_128_192_or_256_bits">Key sizes: 128, 192 or 256 bits</string>
+    <string name="clear">Clear</string>
+    <string name="encrypt">Encrypt</string>
+    <string name="random">Random</string>
+    <string name="decrypt">Decrypt</string>
+</resources>
