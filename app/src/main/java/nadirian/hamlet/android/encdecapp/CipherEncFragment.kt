@@ -13,6 +13,7 @@ import android.view.inputmethod.EditorInfo
 import android.view.inputmethod.InputMethodManager
 import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
+import nadirian.hamlet.android.encdecapp.Encryptor.encrypt
 import nadirian.hamlet.android.encdecapp.databinding.FragmentCipherEncBinding
 import org.bouncycastle.jce.provider.BouncyCastleProvider
 import java.io.UnsupportedEncodingException
@@ -24,7 +25,6 @@ import javax.crypto.spec.SecretKeySpec
 
 
 class CipherEncFragment : Fragment() {
-    var enc = AESEncryptor()
 
     private var _binding: FragmentCipherEncBinding? = null
     private val binding get() = _binding
@@ -37,8 +37,35 @@ class CipherEncFragment : Fragment() {
         val view = _binding!!.root
         var plaintTextEt = binding!!.plaintextForEncEdt.text
         var cipherTextEt = binding!!.cipherTextForEncEdt.text
-        binding!!.sizeKeyForEncTv.text= 0.toString()
 
+ /*       binding!!.sizeKeyForEncTv.text= 0.toString()
+        binding!!.sizeKeyForEncTv.setText(0)
+        binding!!.initVectorEdt.setText(0)*/
+//IV
+        binding!!.initVectorEdt.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable) {}
+
+            override fun beforeTextChanged(s: CharSequence, start: Int,
+                                           count: Int, after: Int) {
+            }
+
+            override fun onTextChanged(s: CharSequence, start: Int,
+                                       before: Int, count: Int) {
+
+                var keyLength = binding!!.initVectorEdt.length()
+                var convertToIntSize = (keyLength.toInt()*8)
+
+                if (convertToIntSize==128||convertToIntSize==192||convertToIntSize==256){
+                    binding!!.sizeIVForEncTv.setTextColor(Color.GREEN);
+                }
+                else{
+                    binding!!.sizeIVForEncTv.setTextColor(Color.RED);
+                }
+                binding!!.sizeIVForEncTv.text=convertToIntSize.toString()
+            }
+        })
+
+        ////KEY
         binding!!.keyForEncEdt.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable) {}
 
@@ -48,8 +75,10 @@ class CipherEncFragment : Fragment() {
 
             override fun onTextChanged(s: CharSequence, start: Int,
                                        before: Int, count: Int) {
+
                 var keyLength = binding!!.keyForEncEdt.length()
                 var convertToIntSize = (keyLength.toInt()*8)
+
                 if (convertToIntSize==128||convertToIntSize==192||convertToIntSize==256){
                     binding!!.sizeKeyForEncTv.setTextColor(Color.GREEN);
                 }
@@ -57,12 +86,13 @@ class CipherEncFragment : Fragment() {
                     binding!!.sizeKeyForEncTv.setTextColor(Color.RED);
                 }
                 binding!!.sizeKeyForEncTv.text=convertToIntSize.toString()
-
             }
         })
 
         binding!!.clearForEncBt.setOnClickListener {
             binding!!.keyForEncEdt.setText("")
+            binding!!.initVectorEdt.setText("")
+
         }
 
 /*        binding!!.plaintextForEncEdt.setOnEditorActionListener { v, actionId, event ->
@@ -76,10 +106,10 @@ class CipherEncFragment : Fragment() {
             false
         }*/
         var secretKey= binding!!.keyForEncEdt.text
-
+        var IV = binding!!.initVectorEdt.text
          binding!!.keyForEncEdt.setOnEditorActionListener { v, actionId, event ->
             if (actionId == EditorInfo.IME_ACTION_SEND) {
-                binding!!.cipherTextForEncEdt.setText(enc.encrypt(plaintTextEt.toString(),secretKey.toString()))
+                binding!!.cipherTextForEncEdt.setText(encrypt(secretKey.toString(),IV.toString(),plaintTextEt.toString()))
                 val imm =
                     v.context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
                 imm.hideSoftInputFromWindow(v.windowToken, 0)
@@ -88,7 +118,7 @@ class CipherEncFragment : Fragment() {
             false
         }
         binding!!.encryptBtn.setOnClickListener {
-            binding!!.cipherTextForEncEdt.setText(enc.encrypt(plaintTextEt.toString(),secretKey.toString()))
+            binding!!.cipherTextForEncEdt.setText(encrypt(secretKey.toString(),IV.toString(),plaintTextEt.toString()))
         }
         return view
     }

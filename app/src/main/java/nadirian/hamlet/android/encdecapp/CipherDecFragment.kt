@@ -12,11 +12,11 @@ import android.view.ViewGroup
 import android.view.inputmethod.EditorInfo
 import android.view.inputmethod.InputMethodManager
 import androidx.core.widget.addTextChangedListener
+import nadirian.hamlet.android.encdecapp.Encryptor.decrypt
 import nadirian.hamlet.android.encdecapp.databinding.FragmentCipherDecBinding
 
 class CipherDecFragment : Fragment() {
 
-    var dec = AESEncryptor()
 
     private var _binding:FragmentCipherDecBinding? = null
     private val binding get() = _binding
@@ -53,13 +53,41 @@ class CipherDecFragment : Fragment() {
 
             }
         })
+        binding!!.initVectorForDecEdt.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable) {}
+
+            override fun beforeTextChanged(s: CharSequence, start: Int,
+                                           count: Int, after: Int) {
+            }
+
+            override fun onTextChanged(s: CharSequence, start: Int,
+                                       before: Int, count: Int) {
+
+                var keyLength = binding!!.initVectorForDecEdt.length()
+                var convertToIntSize = (keyLength.toInt()*8)
+
+                if (convertToIntSize==128||convertToIntSize==192||convertToIntSize==256){
+                    binding!!.sizeIVForDecTv.setTextColor(Color.GREEN);
+                }
+                else{
+                    binding!!.sizeIVForDecTv.setTextColor(Color.RED);
+                }
+                binding!!.sizeIVForDecTv.text=convertToIntSize.toString()
+            }
+        })
+
+
         binding!!.clearForDecBt.setOnClickListener {
             binding!!.keyForDecEdt.setText("")
+            binding!!.initVectorForDecEdt.setText("")
+
         }
         var secretKey= binding!!.keyForDecEdt.text
+        var IV=binding!!.initVectorForDecEdt.text
+        //secretKey.toString(),IV.toString(),plaintTextEt.toString
         binding!!.keyForDecEdt.setOnEditorActionListener { v, actionId, event ->
             if (actionId == EditorInfo.IME_ACTION_SEND) {
-                binding!!.plaintextForDecEdt.setText(dec.decryptWithAES(secretKey.toString(),ciphertextForDecEdt.toString()))
+                binding!!.plaintextForDecEdt.setText(decrypt(secretKey.toString(),IV.toString(),ciphertextForDecEdt.toString()))
                 val imm =
                     v.context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
                 imm.hideSoftInputFromWindow(v.windowToken, 0)
@@ -68,7 +96,7 @@ class CipherDecFragment : Fragment() {
             false
         }
         binding!!.decryptBtn.setOnClickListener {
-            binding!!.plaintextForDecEdt.setText(dec.decryptWithAES(secretKey.toString(),ciphertextForDecEdt.toString()))
+           binding!!.plaintextForDecEdt.setText(decrypt(secretKey.toString(),IV.toString(),ciphertextForDecEdt.toString()))
         }
         return view
     }
