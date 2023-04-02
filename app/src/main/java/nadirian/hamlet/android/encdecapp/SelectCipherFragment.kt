@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.EditText
 import androidx.navigation.findNavController
 
 class SelectCipherFragment : Fragment() {
@@ -19,13 +18,23 @@ class SelectCipherFragment : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_select_cipher, container, false)
 
-        val nextButton1 = view.findViewById<Button>(R.id.encAesCipherBt)
-        val nextButton2 = view.findViewById<Button>(R.id.encDesCipherBt)
+        val selectAESBt = view.findViewById<Button>(R.id.encAesCipherBt)
+        val selectASCIIBt = view.findViewById<Button>(R.id.encASCICodeBt)
+        val selectCaesar = view.findViewById<Button>(R.id.encCaesarCipherBt)
 
-        nextButton1.setOnClickListener {
+        selectAESBt.setOnClickListener {
             view.findNavController()
                 .navigate(R.id.action_selectCipherFragment_to_cipherEncFragment)
         }
+        selectASCIIBt.setOnClickListener {
+            view.findNavController()
+                .navigate(R.id.action_selectCipherFragment_to_ASCICodeEncFragment)
+        }
+        selectCaesar.setOnClickListener {
+            view.findNavController()
+                .navigate(R.id.action_selectCipherFragment_to_caesarCipherFragment)
+        }
+
         return view
     }
 

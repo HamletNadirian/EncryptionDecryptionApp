@@ -25,12 +25,18 @@
         <action
             android:id="@+id/action_selectCipherFragment_to_cipherEncFragment"
             app:destination="@id/cipherEncFragment" />
+        <action
+            android:id="@+id/action_selectCipherFragment_to_ASCICodeEncFragment"
+            app:destination="@id/ASCICodeEncFragment" />
+        <action
+            android:id="@+id/action_selectCipherFragment_to_caesarCipherFragment"
+            app:destination="@id/caesarCipherFragment" />
     </fragment>
     <fragment
         android:id="@+id/cipherEncFragment"
-        android:name="nadirian.hamlet.android.encdecapp.CipherEncFragment"
+        android:name="nadirian.hamlet.android.encdecapp.fragments.advanced_encryption_standard.AESCipherEncFragment"
         android:label="fragment_cipher_enc"
-        tools:layout="@layout/fragment_cipher_enc" />
+        tools:layout="@layout/fragment_aes_cipher_enc" />
     <fragment
         android:id="@+id/selectDecCipherFragment"
         android:name="nadirian.hamlet.android.encdecapp.SelectDecCipherFragment"
@@ -39,10 +45,36 @@
         <action
             android:id="@+id/action_selectDecCipherFragment_to_cipherDecFragment"
             app:destination="@id/cipherDecFragment" />
+        <action
+            android:id="@+id/action_selectDecCipherFragment_to_ASCICodeDecFragment"
+            app:destination="@id/ASCICodeDecFragment" />
+        <action
+            android:id="@+id/action_selectDecCipherFragment_to_caesarCipherDecFragment"
+            app:destination="@id/caesarCipherDecFragment" />
     </fragment>
     <fragment
         android:id="@+id/cipherDecFragment"
-        android:name="nadirian.hamlet.android.encdecapp.CipherDecFragment"
+        android:name="nadirian.hamlet.android.encdecapp.fragments.advanced_encryption_standard.AESCipherDecFragment"
         android:label="fragment_cipher_dec"
-        tools:layout="@layout/fragment_cipher_dec" />
+        tools:layout="@layout/fragment_aes_cipher_dec" />
+    <fragment
+        android:id="@+id/ASCICodeEncFragment"
+        android:name="nadirian.hamlet.android.encdecapp.fragments.ascii_code.ASCIICodeEncFragment"
+        android:label="fragment_a_s_c_i_code_enc"
+        tools:layout="@layout/fragment_a_s_c_i_i_code_enc" />
+    <fragment
+        android:id="@+id/ASCICodeDecFragment"
+        android:name="nadirian.hamlet.android.encdecapp.fragments.ascii_code.ASCIICodeDecFragment"
+        android:label="fragment_a_s_c_i_code_dec"
+        tools:layout="@layout/fragment_a_s_c_i_i_code_dec" />
+    <fragment
+        android:id="@+id/caesarCipherFragment"
+        android:name="nadirian.hamlet.android.encdecapp.fragments.caesar_cipher.CaesarCipherEncFragment"
+        android:label="fragment_caesar_cipher"
+        tools:layout="@layout/fragment_caesar_enc_cipher" />
+    <fragment
+        android:id="@+id/caesarCipherDecFragment"
+        android:name="nadirian.hamlet.android.encdecapp.fragments.caesar_cipher.CaesarCipherDecFragment"
+        android:label="fragment_caesar_cipher_dec"
+        tools:layout="@layout/fragment_caesar_cipher_dec" />
 </navigation>

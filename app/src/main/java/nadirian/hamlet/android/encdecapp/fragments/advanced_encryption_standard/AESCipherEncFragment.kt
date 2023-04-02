@@ -1,46 +1,38 @@
-package nadirian.hamlet.android.encdecapp
+package nadirian.hamlet.android.encdecapp.fragments.advanced_encryption_standard
 
 import android.content.Context
 import android.graphics.Color
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import android.util.Base64
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.EditorInfo
 import android.view.inputmethod.InputMethodManager
-import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
-import nadirian.hamlet.android.encdecapp.Encryptor.encrypt
-import nadirian.hamlet.android.encdecapp.databinding.FragmentCipherEncBinding
-import org.bouncycastle.jce.provider.BouncyCastleProvider
-import java.io.UnsupportedEncodingException
-import java.security.InvalidKeyException
-import java.security.NoSuchAlgorithmException
-import java.security.Security
-import javax.crypto.*
-import javax.crypto.spec.SecretKeySpec
+import nadirian.hamlet.android.encdecapp.fragments.advanced_encryption_standard.Encryptor.encrypt
+import nadirian.hamlet.android.encdecapp.databinding.FragmentAesCipherEncBinding
 
 
-class CipherEncFragment : Fragment() {
+class AESCipherEncFragment : Fragment() {
 
-    private var _binding: FragmentCipherEncBinding? = null
+    private var _binding: FragmentAesCipherEncBinding? = null
     private val binding get() = _binding
+
+    private lateinit var secretKeyToString:String
+    private lateinit var IVtoString:String
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding= FragmentCipherEncBinding.inflate(inflater,container,false)
+        _binding= nadirian.hamlet.android.encdecapp.databinding.FragmentAesCipherEncBinding.inflate(inflater,container,false)
         val view = _binding!!.root
         var plaintTextEt = binding!!.plaintextForEncEdt.text
-        var cipherTextEt = binding!!.cipherTextForEncEdt.text
 
- /*       binding!!.sizeKeyForEncTv.text= 0.toString()
-        binding!!.sizeKeyForEncTv.setText(0)
-        binding!!.initVectorEdt.setText(0)*/
+        var secretKey= binding!!.keyForEncEdt.text
+        var IV = binding!!.initVectorEdt.text
 //IV
         binding!!.initVectorEdt.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable) {}
@@ -51,11 +43,12 @@ class CipherEncFragment : Fragment() {
 
             override fun onTextChanged(s: CharSequence, start: Int,
                                        before: Int, count: Int) {
+                IVtoString = IV.toString()
 
                 var keyLength = binding!!.initVectorEdt.length()
                 var convertToIntSize = (keyLength.toInt()*8)
 
-                if (convertToIntSize==128||convertToIntSize==192||convertToIntSize==256){
+                if (convertToIntSize==128){
                     binding!!.sizeIVForEncTv.setTextColor(Color.GREEN);
                 }
                 else{
@@ -75,7 +68,7 @@ class CipherEncFragment : Fragment() {
 
             override fun onTextChanged(s: CharSequence, start: Int,
                                        before: Int, count: Int) {
-
+                secretKeyToString = secretKey.toString()
                 var keyLength = binding!!.keyForEncEdt.length()
                 var convertToIntSize = (keyLength.toInt()*8)
 
@@ -95,21 +88,8 @@ class CipherEncFragment : Fragment() {
 
         }
 
-/*        binding!!.plaintextForEncEdt.setOnEditorActionListener { v, actionId, event ->
-            if (actionId == EditorInfo.IME_ACTION_SEND) {
-                binding!!.cipherTextEdt.setText(enc.encrypt(plaintTextEt.toString(),secretKey))
-                val imm =
-                    v.context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-                imm.hideSoftInputFromWindow(v.windowToken, 0)
-                true
-            }
-            false
-        }*/
-        var secretKey= binding!!.keyForEncEdt.text
-        var IV = binding!!.initVectorEdt.text
          binding!!.keyForEncEdt.setOnEditorActionListener { v, actionId, event ->
             if (actionId == EditorInfo.IME_ACTION_SEND) {
-                binding!!.cipherTextForEncEdt.setText(encrypt(secretKey.toString(),IV.toString(),plaintTextEt.toString()))
                 val imm =
                     v.context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
                 imm.hideSoftInputFromWindow(v.windowToken, 0)
@@ -117,14 +97,21 @@ class CipherEncFragment : Fragment() {
             }
             false
         }
+
         binding!!.encryptBtn.setOnClickListener {
-            binding!!.cipherTextForEncEdt.setText(encrypt(secretKey.toString(),IV.toString(),plaintTextEt.toString()))
+            binding!!.cipherTextForEncEdt.setText(encrypt(secretKeyToString,IVtoString,plaintTextEt.toString()))
         }
+
         return view
     }
     override fun onDestroyView() {
         _binding = null
         super.onDestroyView()
     }
-
+    fun getRandomString(length: Int) : String {
+        val charset = "ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz0123456789"
+        return (1..length)
+            .map { charset.random() }
+            .joinToString("")
+    }
 }

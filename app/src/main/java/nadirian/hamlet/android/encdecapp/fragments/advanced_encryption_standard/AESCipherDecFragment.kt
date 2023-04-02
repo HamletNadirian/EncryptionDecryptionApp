@@ -1,4 +1,4 @@
-package nadirian.hamlet.android.encdecapp
+package nadirian.hamlet.android.encdecapp.fragments.advanced_encryption_standard
 
 import android.content.Context
 import android.graphics.Color
@@ -11,25 +11,21 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.EditorInfo
 import android.view.inputmethod.InputMethodManager
-import androidx.core.widget.addTextChangedListener
-import nadirian.hamlet.android.encdecapp.Encryptor.decrypt
-import nadirian.hamlet.android.encdecapp.databinding.FragmentCipherDecBinding
+import nadirian.hamlet.android.encdecapp.fragments.advanced_encryption_standard.Encryptor.decrypt
+import nadirian.hamlet.android.encdecapp.databinding.FragmentAesCipherDecBinding
 
-class CipherDecFragment : Fragment() {
+class AESCipherDecFragment : Fragment() {
 
-
-    private var _binding:FragmentCipherDecBinding? = null
+    private var _binding:FragmentAesCipherDecBinding? = null
     private val binding get() = _binding
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentCipherDecBinding.inflate(inflater,container,false)
+        _binding = FragmentAesCipherDecBinding.inflate(inflater,container,false)
         val view = _binding!!.root
         var ciphertextForDecEdt = binding!!.ciphertextForDecEdt.text
-        var plaintextForDecEdt = binding!!.plaintextForDecEdt.text
         binding!!.sizeKeyForDecTv.text = 0.toString()
 
         binding!!.keyForDecEdt.addTextChangedListener(object : TextWatcher {

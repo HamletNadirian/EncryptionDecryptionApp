@@ -10,7 +10,9 @@
         android:id="@+id/enc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Enc"
+        android:text="Encryption"
+        android:backgroundTint="@color/black"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/dec"
         app:layout_constraintStart_toStartOf="parent"
@@ -20,7 +22,9 @@
         android:id="@+id/dec"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Dec"
+        android:text="Decryption"
+        android:backgroundTint="@color/black"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/enc"

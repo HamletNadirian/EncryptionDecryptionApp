@@ -8,4 +8,5 @@
     <string name="encrypt">Encrypt</string>
     <string name="random">Random</string>
     <string name="decrypt">Decrypt</string>
+    <string name="decrypted_text">Decrypted text</string>
 </resources>
