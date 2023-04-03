@@ -31,6 +31,9 @@
         <action
             android:id="@+id/action_selectCipherFragment_to_caesarCipherFragment"
             app:destination="@id/caesarCipherFragment" />
+        <action
+            android:id="@+id/action_selectCipherFragment_to_base64EncFragment"
+            app:destination="@id/base64EncFragment" />
     </fragment>
     <fragment
         android:id="@+id/cipherEncFragment"
@@ -51,6 +54,9 @@
         <action
             android:id="@+id/action_selectDecCipherFragment_to_caesarCipherDecFragment"
             app:destination="@id/caesarCipherDecFragment" />
+        <action
+            android:id="@+id/action_selectDecCipherFragment_to_base64DecFragment"
+            app:destination="@id/base64DecFragment" />
     </fragment>
     <fragment
         android:id="@+id/cipherDecFragment"
@@ -77,4 +83,14 @@
         android:name="nadirian.hamlet.android.encdecapp.fragments.caesar_cipher.CaesarCipherDecFragment"
         android:label="fragment_caesar_cipher_dec"
         tools:layout="@layout/fragment_caesar_cipher_dec" />
+    <fragment
+        android:id="@+id/base64DecFragment"
+        android:name="nadirian.hamlet.android.encdecapp.fragments.base64_encode.Base64DecFragment"
+        android:label="fragment_base64_dec"
+        tools:layout="@layout/fragment_base64_dec" />
+    <fragment
+        android:id="@+id/base64EncFragment"
+        android:name="nadirian.hamlet.android.encdecapp.fragments.base64_encode.Base64EncFragment"
+        android:label="fragment_base64_enc"
+        tools:layout="@layout/fragment_base64_enc" />
 </navigation>

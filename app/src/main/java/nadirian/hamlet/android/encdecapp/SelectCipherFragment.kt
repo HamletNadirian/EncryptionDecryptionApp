@@ -21,6 +21,7 @@ class SelectCipherFragment : Fragment() {
         val selectAESBt = view.findViewById<Button>(R.id.encAesCipherBt)
         val selectASCIIBt = view.findViewById<Button>(R.id.encASCICodeBt)
         val selectCaesar = view.findViewById<Button>(R.id.encCaesarCipherBt)
+        val selectBase64EncBt = view.findViewById<Button>(R.id.encBase64Bt)
 
         selectAESBt.setOnClickListener {
             view.findNavController()
@@ -33,6 +34,10 @@ class SelectCipherFragment : Fragment() {
         selectCaesar.setOnClickListener {
             view.findNavController()
                 .navigate(R.id.action_selectCipherFragment_to_caesarCipherFragment)
+        }
+
+        selectBase64EncBt.setOnClickListener {
+            view.findNavController().navigate(R.id.action_selectCipherFragment_to_base64EncFragment)
         }
 
         return view

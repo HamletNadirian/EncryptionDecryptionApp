@@ -1,31 +1,37 @@
-package nadirian.hamlet.android.encdecapp.fragments.ascii_code
+package nadirian.hamlet.android.encdecapp.fragments.base64_encode
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import nadirian.hamlet.android.encdecapp.databinding.FragmentASCIICodeDecBinding
-import nadirian.hamlet.android.encdecapp.model.american_standard_code_for_information_interchange.ASCIIEncryptor
+import nadirian.hamlet.android.encdecapp.R
+import nadirian.hamlet.android.encdecapp.databinding.FragmentBase64DecBinding
+import nadirian.hamlet.android.encdecapp.model.base64.Base64Encoding
 
-class ASCIICodeDecFragment : Fragment() {
 
-    private var _binding: FragmentASCIICodeDecBinding?=null
+class Base64DecFragment : Fragment() {
+
+    private var _binding: FragmentBase64DecBinding?=null
     private val binding get() = _binding
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentASCIICodeDecBinding.inflate(inflater,container,false)
+
+        _binding = FragmentBase64DecBinding.inflate(inflater,container,false)
 
         val view = _binding!!.root
         var ciphertextEt = binding!!.ciphertextForEncEdt.text
 
         binding!!.decryptBtn.setOnClickListener {
             if (ciphertextEt != null) {
-                binding!!.plainTextForDecEdt.setText(ASCIIEncryptor.asciiToString(ciphertextEt.toString()))
+                binding!!.plainTextForDecEdt.setText(Base64Encoding.decode(ciphertextEt.toString()))
             }
         }
+
         return view
     }
+
 }

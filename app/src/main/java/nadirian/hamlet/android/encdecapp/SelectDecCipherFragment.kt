@@ -17,21 +17,26 @@ class SelectDecCipherFragment : Fragment() {
 
         val view = inflater.inflate(R.layout.fragment_select_dec_cipher,container,false)
 
-        val selectDecForAESBt = view.findViewById<Button>(R.id.encAesCipherBt)
-        val selectDecForDESBt = view.findViewById<Button>(R.id.encDesCipherBt)
+        val selectDecForAESBt = view.findViewById<Button>(R.id.decAesCipherBt)
+        val selectDecForASCIBt = view.findViewById<Button>(R.id.decASCICodeBt)
         val selectDecForCaesarBt = view.findViewById<Button>(R.id.decCaesarCipherBt)
+        val selectDecForBase64Bt = view.findViewById<Button>(R.id.decBase64Bt)
 
         selectDecForAESBt.setOnClickListener {
             view.findNavController()
                 .navigate(R.id.action_selectDecCipherFragment_to_cipherDecFragment)
         }
-        selectDecForDESBt.setOnClickListener {
+        selectDecForASCIBt.setOnClickListener {
             view.findNavController()
                 .navigate(R.id.action_selectDecCipherFragment_to_ASCICodeDecFragment)
         }
         selectDecForCaesarBt.setOnClickListener {
             view.findNavController()
                 .navigate(R.id.action_selectDecCipherFragment_to_caesarCipherDecFragment)
+        }
+        selectDecForBase64Bt.setOnClickListener {
+            view.findNavController()
+                .navigate(R.id.action_selectDecCipherFragment_to_base64DecFragment)
         }
         return view
     }

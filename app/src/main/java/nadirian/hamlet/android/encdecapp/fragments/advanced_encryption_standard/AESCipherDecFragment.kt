@@ -34,7 +34,6 @@ class AESCipherDecFragment : Fragment() {
             override fun beforeTextChanged(s: CharSequence, start: Int,
                                            count: Int, after: Int) {
             }
-
             override fun onTextChanged(s: CharSequence, start: Int,
                                        before: Int, count: Int) {
                 var keyLength = binding!!.keyForDecEdt.length()
@@ -55,7 +54,6 @@ class AESCipherDecFragment : Fragment() {
             override fun beforeTextChanged(s: CharSequence, start: Int,
                                            count: Int, after: Int) {
             }
-
             override fun onTextChanged(s: CharSequence, start: Int,
                                        before: Int, count: Int) {
 
@@ -80,7 +78,6 @@ class AESCipherDecFragment : Fragment() {
         }
         var secretKey= binding!!.keyForDecEdt.text
         var IV=binding!!.initVectorForDecEdt.text
-        //secretKey.toString(),IV.toString(),plaintTextEt.toString
         binding!!.keyForDecEdt.setOnEditorActionListener { v, actionId, event ->
             if (actionId == EditorInfo.IME_ACTION_SEND) {
                 binding!!.plaintextForDecEdt.setText(decrypt(secretKey.toString(),IV.toString(),ciphertextForDecEdt.toString()))

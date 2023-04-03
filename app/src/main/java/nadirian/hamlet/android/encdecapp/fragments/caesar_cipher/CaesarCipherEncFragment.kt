@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import nadirian.hamlet.android.encdecapp.databinding.FragmentCaesarEncCipherBinding
-import nadirian.hamlet.android.encdecapp.fragments.caesar_cipher.CaesarCipherEncryptor.encryptionCaesar
+import nadirian.hamlet.android.encdecapp.model.caesar_cipher.CaesarCipherEncryptor.encryptionCaesar
 
 
 class CaesarCipherEncFragment : Fragment() {
@@ -14,9 +14,6 @@ class CaesarCipherEncFragment : Fragment() {
     private var _binding: FragmentCaesarEncCipherBinding? = null
     private val binding get() = _binding
     private var shiftForCaesarCipher = 0
-
-    val number: Char = 'a'
-    val numberAsInt = number.code
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -29,7 +26,7 @@ class CaesarCipherEncFragment : Fragment() {
 
         binding!!.minusShiftBt.setOnClickListener {
             shiftForCaesarCipher = shiftForCaesarCipher - 1
-            binding!!.shiftEt.setText(shiftForCaesarCipher.toString())
+            binding!!.shiftEt.setText(shiftForCaesarCipher.toString().lowercase())
         }
 
         binding!!.plusShiftBtn.setOnClickListener {
@@ -48,7 +45,5 @@ class CaesarCipherEncFragment : Fragment() {
         }
         return view
     }
-
-
 
 }

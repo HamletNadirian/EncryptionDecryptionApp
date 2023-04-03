@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     android:orientation="vertical">
 
     <LinearLayout
@@ -90,6 +91,7 @@
                     android:layout_below="@+id/cipher"
                     android:backgroundTint="@color/black"
                     android:text="Caesar Cipher" />
+
             </RelativeLayout>
         </LinearLayout>
     </LinearLayout>

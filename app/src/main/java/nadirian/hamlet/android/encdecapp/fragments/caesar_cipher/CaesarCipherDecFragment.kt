@@ -5,10 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import nadirian.hamlet.android.encdecapp.R
 import nadirian.hamlet.android.encdecapp.databinding.FragmentCaesarCipherDecBinding
-import nadirian.hamlet.android.encdecapp.databinding.FragmentCaesarEncCipherBinding
-import nadirian.hamlet.android.encdecapp.fragments.caesar_cipher.CaesarCipherEncryptor.decryptionCaesar
+import nadirian.hamlet.android.encdecapp.model.caesar_cipher.CaesarCipherEncryptor.decryptionCaesar
 
 
 class CaesarCipherDecFragment : Fragment() {
@@ -28,7 +26,7 @@ class CaesarCipherDecFragment : Fragment() {
         var ciphertext = binding!!.ciphertextForEncEdt.text
         binding!!.minusShiftBt.setOnClickListener {
             shiftForCaesarCipher = shiftForCaesarCipher - 1
-            binding!!.shiftEt.setText(shiftForCaesarCipher.toString())
+            binding!!.shiftEt.setText(shiftForCaesarCipher.toString().lowercase())
         }
 
         binding!!.plusShiftBtn.setOnClickListener {

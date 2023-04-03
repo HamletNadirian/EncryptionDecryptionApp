@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import nadirian.hamlet.android.encdecapp.databinding.FragmentASCIICodeEncBinding
+import nadirian.hamlet.android.encdecapp.model.american_standard_code_for_information_interchange.ASCIIEncryptor
 
 
 class ASCIICodeEncFragment : Fragment() {

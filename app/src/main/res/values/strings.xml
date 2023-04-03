@@ -9,4 +9,7 @@
     <string name="random">Random</string>
     <string name="decrypt">Decrypt</string>
     <string name="decrypted_text">Decrypted text</string>
+    <string name="decode_from_base64_format">Decode from Base64 format</string>
+    <string name="encode_to_base64_format">Encode to Base64 format</string>
+    <string name="result_goes_here">Result goes here</string>
 </resources>

@@ -1,4 +1,4 @@
-package nadirian.hamlet.android.encdecapp.fragments.caesar_cipher
+package nadirian.hamlet.android.encdecapp.model.caesar_cipher
 
 object CaesarCipherEncryptor {
     val number: Char = 'a'

@@ -1,4 +1,4 @@
-package nadirian.hamlet.android.encdecapp.fragments.ascii_code
+package nadirian.hamlet.android.encdecapp.model.american_standard_code_for_information_interchange
 
 object ASCIIEncryptor {
 
@@ -8,7 +8,7 @@ object ASCIIEncryptor {
         var codeZeroOfBytes = '0'.code
         for (element in str) {
             num = num * 10 + (element.code - codeZeroOfBytes)
-            if (num >= 32 && num <= 122) {
+            if (num in 32..122) {
                 val ch = num.toChar()
                 num = 0
                 resultString+=ch
