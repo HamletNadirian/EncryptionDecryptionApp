@@ -78,7 +78,7 @@ class AESCipherDecFragment : Fragment() {
         }
         var secretKey= binding!!.keyForDecEdt.text
         var IV=binding!!.initVectorForDecEdt.text
-        binding!!.keyForDecEdt.setOnEditorActionListener { v, actionId, event ->
+    /*    binding!!.keyForDecEdt.setOnEditorActionListener { v, actionId, event ->
             if (actionId == EditorInfo.IME_ACTION_SEND) {
                 binding!!.plaintextForDecEdt.setText(decrypt(secretKey.toString(),IV.toString(),ciphertextForDecEdt.toString()))
                 val imm =
@@ -87,7 +87,7 @@ class AESCipherDecFragment : Fragment() {
                 true
             }
             false
-        }
+        }*/
         binding!!.decryptBtn.setOnClickListener {
            binding!!.plaintextForDecEdt.setText(decrypt(secretKey.toString(),IV.toString(),ciphertextForDecEdt.toString()))
         }

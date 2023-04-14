@@ -1,5 +1,11 @@
 package nadirian.hamlet.android.encdecapp.model.caesar_cipher
 
+import org.bouncycastle.crypto.engines.SerpentEngine
+import org.bouncycastle.crypto.modes.CBCBlockCipher
+import org.bouncycastle.crypto.paddings.PaddedBufferedBlockCipher
+import org.bouncycastle.crypto.params.KeyParameter
+import org.bouncycastle.util.encoders.Hex
+
 object CaesarCipherEncryptor {
     val number: Char = 'a'
     val numberAsInt = number.code
@@ -33,4 +39,6 @@ object CaesarCipherEncryptor {
 
         return str
     }
+
+
 }

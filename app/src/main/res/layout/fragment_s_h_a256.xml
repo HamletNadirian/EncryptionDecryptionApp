@@ -6,7 +6,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_margin="12dp"
     android:orientation="vertical"
-    tools:context=".fragments.base64_encode.Base64DecFragment">
+    tools:context=".fragments.sha256.SHA256Fragment">
 
     <com.google.android.material.textfield.TextInputLayout
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -14,24 +14,25 @@
         android:layout_height="match_parent"
         android:layout_weight="0.5"
         app:expandedHintEnabled="false">
+
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/ciphertextForDecEdt"
+            android:id="@+id/plaintextForEncEdt"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="start"
-            android:hint="@string/decode_from_base64_format"
+            android:hint="MD5 hash function"
             android:imeOptions="actionSend"
             android:inputType="text"
             android:maxLines="1" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/decrypt_btn"
+        android:id="@+id/encrypt_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/decrypt"
         android:backgroundTint="@color/black"
-        android:drawableLeft="@drawable/ic_baseline_lock_open_24" />
+        android:drawableLeft="@drawable/ic_baseline_lock_24"
+        android:text="@string/encrypt" />
 
     <com.google.android.material.textfield.TextInputLayout
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -41,7 +42,7 @@
         app:expandedHintEnabled="false">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/plainTextForDecEdt"
+            android:id="@+id/resultOfEncrypted"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="start"
@@ -51,5 +52,4 @@
             android:maxLines="1" />
 
     </com.google.android.material.textfield.TextInputLayout>
-
 </LinearLayout>

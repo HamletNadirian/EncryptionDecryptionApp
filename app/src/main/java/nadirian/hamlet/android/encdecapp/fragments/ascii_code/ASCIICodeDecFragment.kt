@@ -19,7 +19,7 @@ class ASCIICodeDecFragment : Fragment() {
         _binding = FragmentASCIICodeDecBinding.inflate(inflater,container,false)
 
         val view = _binding!!.root
-        var ciphertextEt = binding!!.ciphertextForEncEdt.text
+        var ciphertextEt = binding!!.ciphertextForDecEdt.text
 
         binding!!.decryptBtn.setOnClickListener {
             if (ciphertextEt != null) {

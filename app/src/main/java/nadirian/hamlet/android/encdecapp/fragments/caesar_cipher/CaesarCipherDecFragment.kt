@@ -23,7 +23,7 @@ class CaesarCipherDecFragment : Fragment() {
         _binding = FragmentCaesarCipherDecBinding.inflate(inflater, container, false)
         val view = _binding!!.root
 
-        var ciphertext = binding!!.ciphertextForEncEdt.text
+        var ciphertext = binding!!.ciphertextForDecEdt.text
         binding!!.minusShiftBt.setOnClickListener {
             shiftForCaesarCipher = shiftForCaesarCipher - 1
             binding!!.shiftEt.setText(shiftForCaesarCipher.toString().lowercase())

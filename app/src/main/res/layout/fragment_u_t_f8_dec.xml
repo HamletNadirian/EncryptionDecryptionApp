@@ -6,20 +6,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_margin="12dp"
     android:orientation="vertical"
-    tools:context=".fragments.base64_encode.Base64DecFragment">
-
+    tools:context=".fragments.utf_8_code.UTF8DecFragment">
     <com.google.android.material.textfield.TextInputLayout
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="0.5"
         app:expandedHintEnabled="false">
+
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/ciphertextForDecEdt"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="start"
-            android:hint="@string/decode_from_base64_format"
+            android:hint="Decode from UTF8 code"
             android:imeOptions="actionSend"
             android:inputType="text"
             android:maxLines="1" />
@@ -29,10 +29,9 @@
         android:id="@+id/decrypt_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/decrypt"
         android:backgroundTint="@color/black"
-        android:drawableLeft="@drawable/ic_baseline_lock_open_24" />
-
+        android:drawableLeft="@drawable/ic_baseline_lock_24"
+        android:text="@string/decrypt" />
     <com.google.android.material.textfield.TextInputLayout
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
@@ -41,7 +40,7 @@
         app:expandedHintEnabled="false">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/plainTextForDecEdt"
+            android:id="@+id/resultOfDecrypted"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="start"
@@ -51,5 +50,6 @@
             android:maxLines="1" />
 
     </com.google.android.material.textfield.TextInputLayout>
+
 
 </LinearLayout>

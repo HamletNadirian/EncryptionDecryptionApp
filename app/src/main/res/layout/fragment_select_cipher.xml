@@ -5,14 +5,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
     android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
         android:layout_margin="10dp"
+        android:orientation="vertical"
         tools:context=".SelectCipherFragment">
 
         <LinearLayout
@@ -23,9 +22,8 @@
             <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.5"
                 android:layout_margin="10dp"
-
+                android:layout_weight="0.5"
                 android:orientation="vertical">
 
                 <Button
@@ -57,40 +55,53 @@
                     android:layout_below="@+id/encBase64Bt"
                     android:text="Affine code" />
 
+                <Button
+                    android:id="@+id/encUTF8CodeBt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/encAffineCodeBt"
+                    android:text="UTF-8" />
 
                 <Button
                     android:id="@+id/encMorseCodeBt"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/encAffineCodeBt"
-                    android:text="Morse code"
-                    />
+                    android:layout_below="@+id/encUTF8CodeBt"
+                    android:text="Morse code" />
 
             </RelativeLayout>
 
             <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.5"
                 android:layout_margin="10dp"
-
+                android:layout_weight="0.5"
                 android:orientation="vertical">
 
                 <Button
-                    android:id="@+id/cipher"
+                    android:id="@+id/SHA256Bt"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:backgroundTint="@color/black"
-                    android:text="AES" />
+                    android:text="@string/sha256" />
+
+                <Button
+                    android:id="@+id/MD5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/SHA256Bt"
+                    android:backgroundTint="@color/black"
+                    android:text="@string/md5"
+                    android:textSize="12sp" />
 
                 <Button
                     android:id="@+id/encCaesarCipherBt"
                     android:layout_width="match_parent"
-                    android:textSize="12sp"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/cipher"
+                    android:layout_below="@+id/MD5"
                     android:backgroundTint="@color/black"
-                    android:text="Caesar Cipher" />
+                    android:text="Caesar Cipher"
+                    android:textSize="12sp" />
 
             </RelativeLayout>
         </LinearLayout>

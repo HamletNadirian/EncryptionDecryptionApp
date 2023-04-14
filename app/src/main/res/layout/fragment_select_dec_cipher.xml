@@ -55,12 +55,18 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/decBase64Bt"
                     android:text="Affine code" />
-
+                <Button
+                    android:id="@+id/decUTF8CodeBt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/decAffineCodeBt"
+                    android:text="UTF-8"
+                    />
                 <Button
                     android:id="@+id/decMorseCodeBt"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/decAffineCodeBt"
+                    android:layout_below="@+id/decUTF8CodeBt"
                     android:text="Morse code" />
 
             </RelativeLayout>

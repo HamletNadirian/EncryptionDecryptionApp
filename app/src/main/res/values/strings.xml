@@ -12,4 +12,8 @@
     <string name="decode_from_base64_format">Decode from Base64 format</string>
     <string name="encode_to_base64_format">Encode to Base64 format</string>
     <string name="result_goes_here">Result goes here</string>
+    <string name="encode_to_utf8">Encode to UTF8</string>
+    <string name="sha256">SHA256</string>
+    <string name="caesar_cipher">Caesar Cipher</string>
+    <string name="md5">MD5</string>
 </resources>
