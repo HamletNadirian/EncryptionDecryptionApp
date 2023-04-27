@@ -1,4 +1,4 @@
-package nadirian.hamlet.android.encdecapp.fragments.ascii_code
+package nadirian.hamlet.android.encdecapp.fragments.ascii_code_fragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

@@ -1,13 +1,11 @@
-package nadirian.hamlet.android.encdecapp.fragments.utf_8_code
+package nadirian.hamlet.android.encdecapp.fragments.utf_8_code_fragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import nadirian.hamlet.android.encdecapp.R
 import nadirian.hamlet.android.encdecapp.databinding.FragmentUTF8EncBinding
-import nadirian.hamlet.android.encdecapp.model.affine_code.AffineCodeEncryptor
 import nadirian.hamlet.android.encdecapp.model.utf_8_code.UTF8Encryptor
 
 

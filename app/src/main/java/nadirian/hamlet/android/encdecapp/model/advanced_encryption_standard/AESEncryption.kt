@@ -1,11 +1,11 @@
-package nadirian.hamlet.android.encdecapp.fragments.advanced_encryption_standard
+package nadirian.hamlet.android.encdecapp.model.advanced_encryption_standard
 
 import java.util.*
 import javax.crypto.Cipher
 import javax.crypto.spec.SecretKeySpec
 import javax.crypto.spec.IvParameterSpec
 
-object Encryptor {
+object AESEncryption {
     fun encrypt(key: String, initVector: String, value: String): String? {
         try {
             val cipher = Cipher.getInstance("AES/CBC/PKCS5PADDING")

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:layout_margin="12dp"
     android:orientation="vertical"
-    tools:context=".fragments.advanced_encryption_standard.AESCipherDecFragment">
+    tools:context=".fragments.advanced_encryption_standard_fragment.AESCipherDecFragment">
 
     <com.google.android.material.textfield.TextInputLayout
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"

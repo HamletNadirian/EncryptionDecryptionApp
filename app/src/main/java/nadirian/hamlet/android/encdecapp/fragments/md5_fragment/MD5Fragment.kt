@@ -1,33 +1,27 @@
-package nadirian.hamlet.android.encdecapp.fragments.sha256
+package nadirian.hamlet.android.encdecapp.fragments.md5_fragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import nadirian.hamlet.android.encdecapp.R
-import nadirian.hamlet.android.encdecapp.databinding.FragmentSHA256Binding
-import nadirian.hamlet.android.encdecapp.model.sha256_hash.SHA256
+import nadirian.hamlet.android.encdecapp.databinding.FragmentMd5Binding
+import nadirian.hamlet.android.encdecapp.model.md5_hash.MD5
 
-
-class SHA256Fragment : Fragment() {
-
-    private var _binding:FragmentSHA256Binding?=null
+class MD5Fragment : Fragment() {
+    private var _binding:FragmentMd5Binding?=null
     private val binding get() = _binding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentSHA256Binding.inflate(inflater,container,false)
+        _binding = FragmentMd5Binding.inflate(inflater,container,false)
         val view = _binding!!.root
         var plaintTextEt = binding!!.plaintextForEncEdt.text
-
-
         binding!!.encryptBtn.setOnClickListener {
             var edtToString = plaintTextEt.toString()
-
-            var parsString = SHA256.sha256(edtToString)
+            var parsString = MD5.md5(edtToString)
             binding!!.resultOfEncrypted.setText(parsString)
         }
         return view

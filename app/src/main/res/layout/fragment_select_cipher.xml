@@ -61,13 +61,18 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/encAffineCodeBt"
                     android:text="UTF-8" />
-
                 <Button
-                    android:id="@+id/encMorseCodeBt"
+                    android:id="@+id/encCRC16ChecksumBt"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/encUTF8CodeBt"
-                    android:text="Morse code" />
+                    android:text="CRC16" />
+                <Button
+                    android:id="@+id/encCRC32ChecksumBt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/encCRC16ChecksumBt"
+                    android:text="CRC32" />
 
             </RelativeLayout>
 
@@ -101,6 +106,14 @@
                     android:layout_below="@+id/MD5"
                     android:backgroundTint="@color/black"
                     android:text="Caesar Cipher"
+                    android:textSize="12sp" />
+                <Button
+                    android:id="@+id/encDESCipherBt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/encCaesarCipherBt"
+                    android:backgroundTint="@color/black"
+                    android:text="DES"
                     android:textSize="12sp" />
 
             </RelativeLayout>

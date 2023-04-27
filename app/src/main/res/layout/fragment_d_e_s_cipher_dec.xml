@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_margin="12dp"
-    tools:context=".fragments.advanced_encryption_standard_fragment.AESCipherEncFragment">
-
+    android:orientation="vertical"
+    tools:context=".fragments.data_encryption_standard_fragment.DESCipherDecFragment">
 
     <com.google.android.material.textfield.TextInputLayout
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -17,7 +16,7 @@
         app:expandedHintEnabled="false">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/plaintextForEncEdt"
+            android:id="@+id/ciphertextForDecEdt"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="start"
@@ -34,7 +33,7 @@
         app:expandedHintEnabled="false">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/keyForEncEdt"
+            android:id="@+id/keyForDecEdt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="start"
@@ -45,10 +44,9 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
-        android:id="@+id/sizeKeyForEncTv"
+        android:id="@+id/sizeKeyForDecTv"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-       />
+        android:layout_height="wrap_content" />
 
     <com.google.android.material.textfield.TextInputLayout
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -57,7 +55,7 @@
         app:expandedHintEnabled="false">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/initVectorEdt"
+            android:id="@+id/initVectorForDecEdt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="start"
@@ -67,55 +65,35 @@
             android:maxLines="1" />
     </com.google.android.material.textfield.TextInputLayout>
 
-
     <TextView
-        android:id="@+id/sizeIVForEncTv"
+        android:id="@+id/sizeIVForDecTv"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-      />
-    <!--    <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:expandedHintEnabled="false">
+        android:layout_height="wrap_content" />
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/vector_init_edit_text"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="12dp"
-                android:gravity="start"
-                android:hint="Initialization vector"
-                android:imeOptions="actionSend"
-                android:inputType="text"
-                android:maxLines="1" />
-        </com.google.android.material.textfield.TextInputLayout>-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/clearForEncBt"
+            android:id="@+id/clearForDecBt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_weight="0.5"
+            android:backgroundTint="@color/black"
             android:drawableLeft="@drawable/ic_baseline_clear_24"
             android:gravity="center"
-            android:backgroundTint="@color/black"
             android:text="@string/clear" />
     </LinearLayout>
 
     <Button
-        android:id="@+id/encrypt_btn"
+        android:id="@+id/decryptBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/encrypt"
         android:backgroundTint="@color/black"
-        android:drawableLeft="@drawable/ic_baseline_lock_24"
-        />
+        android:drawableLeft="@drawable/ic_baseline_lock_open_24"
+        android:text="@string/decrypt" />
 
     <com.google.android.material.textfield.TextInputLayout
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -125,15 +103,15 @@
         app:expandedHintEnabled="false">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/cipherTextForEncEdt"
+            android:id="@+id/plaintextForDecEdt"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="start"
+
             android:hint="@string/enter_your_text"
             android:imeOptions="actionSend"
             android:inputType="text"
             android:maxLines="1" />
-
     </com.google.android.material.textfield.TextInputLayout>
 
 </LinearLayout>

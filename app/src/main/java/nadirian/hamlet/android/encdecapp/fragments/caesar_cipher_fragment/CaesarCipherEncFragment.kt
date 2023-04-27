@@ -1,17 +1,17 @@
-package nadirian.hamlet.android.encdecapp.fragments.caesar_cipher
+package nadirian.hamlet.android.encdecapp.fragments.caesar_cipher_fragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import nadirian.hamlet.android.encdecapp.databinding.FragmentCaesarCipherDecBinding
-import nadirian.hamlet.android.encdecapp.model.caesar_cipher.CaesarCipherEncryptor.decryptionCaesar
+import nadirian.hamlet.android.encdecapp.databinding.FragmentCaesarEncCipherBinding
+import nadirian.hamlet.android.encdecapp.model.caesar_cipher.CaesarCipherEncryptor.encryptionCaesar
 
 
-class CaesarCipherDecFragment : Fragment() {
+class CaesarCipherEncFragment : Fragment() {
 
-    private var _binding: FragmentCaesarCipherDecBinding? = null
+    private var _binding: FragmentCaesarEncCipherBinding? = null
     private val binding get() = _binding
     private var shiftForCaesarCipher = 0
 
@@ -20,10 +20,10 @@ class CaesarCipherDecFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        _binding = FragmentCaesarCipherDecBinding.inflate(inflater, container, false)
+        _binding = FragmentCaesarEncCipherBinding.inflate(inflater, container, false)
         val view = _binding!!.root
+        var plaintTextEt = binding!!.plaintextForEncEdt.text
 
-        var ciphertext = binding!!.ciphertextForDecEdt.text
         binding!!.minusShiftBt.setOnClickListener {
             shiftForCaesarCipher = shiftForCaesarCipher - 1
             binding!!.shiftEt.setText(shiftForCaesarCipher.toString().lowercase())
@@ -33,11 +33,11 @@ class CaesarCipherDecFragment : Fragment() {
             shiftForCaesarCipher = shiftForCaesarCipher + 1
             binding!!.shiftEt.setText(shiftForCaesarCipher.toString())
         }
-        binding!!.decryptBtn.setOnClickListener {
 
-            var plaintextEdtToString = ciphertext.toString()
-            binding!!.plainTextForEncEdt.setText(
-                decryptionCaesar(
+        binding!!.encryptBtn.setOnClickListener {
+            var plaintextEdtToString = plaintTextEt.toString()
+            binding!!.cipherTextForEncEdt.setText(
+                encryptionCaesar(
                     plaintextEdtToString,
                     shiftForCaesarCipher
                 )
@@ -45,6 +45,5 @@ class CaesarCipherDecFragment : Fragment() {
         }
         return view
     }
-
 
 }

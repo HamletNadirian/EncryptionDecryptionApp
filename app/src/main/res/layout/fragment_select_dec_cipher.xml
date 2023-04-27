@@ -93,6 +93,14 @@
                     android:backgroundTint="@color/black"
                     android:text="Caesar Cipher"
                     android:textSize="12sp" />
+                <Button
+                    android:id="@+id/decDESCipherBt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/decCaesarCipherBt"
+                    android:backgroundTint="@color/black"
+                    android:text="DES"
+                    android:textSize="12sp" />
             </RelativeLayout>
         </LinearLayout>
     </LinearLayout>

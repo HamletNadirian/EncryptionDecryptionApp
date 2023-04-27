@@ -46,10 +46,19 @@
         <action
             android:id="@+id/action_selectCipherFragment_to_MD5Fragment"
             app:destination="@id/MD5Fragment" />
+        <action
+            android:id="@+id/action_selectCipherFragment_to_CRC32Fragment"
+            app:destination="@id/CRC32Fragment" />
+        <action
+            android:id="@+id/action_selectCipherFragment_to_CRC16Fragment"
+            app:destination="@id/CRC16Fragment" />
+        <action
+            android:id="@+id/action_selectCipherFragment_to_DESCipherEncFragment"
+            app:destination="@id/DESCipherEncFragment" />
     </fragment>
     <fragment
         android:id="@+id/cipherEncFragment"
-        android:name="nadirian.hamlet.android.encdecapp.fragments.advanced_encryption_standard.AESCipherEncFragment"
+        android:name="nadirian.hamlet.android.encdecapp.fragments.advanced_encryption_standard_fragment.AESCipherEncFragment"
         android:label="fragment_cipher_enc"
         tools:layout="@layout/fragment_aes_cipher_enc" />
     <fragment
@@ -75,71 +84,94 @@
         <action
             android:id="@+id/action_selectDecCipherFragment_to_UTF8DecFragment"
             app:destination="@id/UTF8DecFragment" />
+        <action
+            android:id="@+id/action_selectDecCipherFragment_to_DESCipherDecFragment"
+            app:destination="@id/DESCipherDecFragment" />
 
     </fragment>
     <fragment
         android:id="@+id/cipherDecFragment"
-        android:name="nadirian.hamlet.android.encdecapp.fragments.advanced_encryption_standard.AESCipherDecFragment"
+        android:name="nadirian.hamlet.android.encdecapp.fragments.advanced_encryption_standard_fragment.AESCipherDecFragment"
         android:label="fragment_cipher_dec"
         tools:layout="@layout/fragment_aes_cipher_dec" />
     <fragment
         android:id="@+id/ASCICodeEncFragment"
-        android:name="nadirian.hamlet.android.encdecapp.fragments.ascii_code.ASCIICodeEncFragment"
+        android:name="nadirian.hamlet.android.encdecapp.fragments.ascii_code_fragment.ASCIICodeEncFragment"
         android:label="fragment_a_s_c_i_code_enc"
         tools:layout="@layout/fragment_a_s_c_i_i_code_enc" />
     <fragment
         android:id="@+id/ASCICodeDecFragment"
-        android:name="nadirian.hamlet.android.encdecapp.fragments.ascii_code.ASCIICodeDecFragment"
+        android:name="nadirian.hamlet.android.encdecapp.fragments.ascii_code_fragment.ASCIICodeDecFragment"
         android:label="fragment_a_s_c_i_code_dec"
         tools:layout="@layout/fragment_a_s_c_i_i_code_dec" />
     <fragment
         android:id="@+id/caesarCipherFragment"
-        android:name="nadirian.hamlet.android.encdecapp.fragments.caesar_cipher.CaesarCipherEncFragment"
+        android:name="nadirian.hamlet.android.encdecapp.fragments.caesar_cipher_fragment.CaesarCipherEncFragment"
         android:label="fragment_caesar_cipher"
         tools:layout="@layout/fragment_caesar_enc_cipher" />
     <fragment
         android:id="@+id/caesarCipherDecFragment"
-        android:name="nadirian.hamlet.android.encdecapp.fragments.caesar_cipher.CaesarCipherDecFragment"
+        android:name="nadirian.hamlet.android.encdecapp.fragments.caesar_cipher_fragment.CaesarCipherDecFragment"
         android:label="fragment_caesar_cipher_dec"
         tools:layout="@layout/fragment_caesar_cipher_dec" />
     <fragment
         android:id="@+id/base64DecFragment"
-        android:name="nadirian.hamlet.android.encdecapp.fragments.base64_encode.Base64DecFragment"
+        android:name="nadirian.hamlet.android.encdecapp.fragments.base64_encode_fragment.Base64DecFragment"
         android:label="fragment_base64_dec"
         tools:layout="@layout/fragment_base64_dec" />
     <fragment
         android:id="@+id/base64EncFragment"
-        android:name="nadirian.hamlet.android.encdecapp.fragments.base64_encode.Base64EncFragment"
+        android:name="nadirian.hamlet.android.encdecapp.fragments.base64_encode_fragment.Base64EncFragment"
         android:label="fragment_base64_enc"
         tools:layout="@layout/fragment_base64_enc" />
     <fragment
         android:id="@+id/affineCodeDecFragment"
-        android:name="nadirian.hamlet.android.encdecapp.fragments.affine_code.AffineCodeDecFragment"
+        android:name="nadirian.hamlet.android.encdecapp.fragments.affine_code_fragment.AffineCodeDecFragment"
         android:label="fragment_affine_code_dec"
         tools:layout="@layout/fragment_affine_code_dec" />
     <fragment
         android:id="@+id/affineCodeEncFragment"
-        android:name="nadirian.hamlet.android.encdecapp.fragments.affine_code.AffineCodeEncFragment"
+        android:name="nadirian.hamlet.android.encdecapp.fragments.affine_code_fragment.AffineCodeEncFragment"
         android:label="fragment_affine_code_enc"
         tools:layout="@layout/fragment_affine_code_enc" />
     <fragment
         android:id="@+id/UTF8DecFragment"
-        android:name="nadirian.hamlet.android.encdecapp.fragments.utf_8_code.UTF8DecFragment"
+        android:name="nadirian.hamlet.android.encdecapp.fragments.utf_8_code_fragment.UTF8DecFragment"
         android:label="fragment_u_t_f8_dec"
         tools:layout="@layout/fragment_u_t_f8_dec" />
     <fragment
         android:id="@+id/UTF8EncFragment"
-        android:name="nadirian.hamlet.android.encdecapp.fragments.utf_8_code.UTF8EncFragment"
+        android:name="nadirian.hamlet.android.encdecapp.fragments.utf_8_code_fragment.UTF8EncFragment"
         android:label="fragment_u_t_f8_enc"
         tools:layout="@layout/fragment_u_t_f8_enc" />
     <fragment
         android:id="@+id/SHA256Fragment"
-        android:name="nadirian.hamlet.android.encdecapp.fragments.sha256.SHA256Fragment"
+        android:name="nadirian.hamlet.android.encdecapp.fragments.sha256_fragment.SHA256Fragment"
         android:label="fragment_s_h_a256"
         tools:layout="@layout/fragment_s_h_a256" />
     <fragment
         android:id="@+id/MD5Fragment"
-        android:name="nadirian.hamlet.android.encdecapp.fragments.md5.MD5Fragment"
+        android:name="nadirian.hamlet.android.encdecapp.fragments.md5_fragment.MD5Fragment"
         android:label="fragment_md5"
         tools:layout="@layout/fragment_md5" />
+    <fragment
+        android:id="@+id/CRC32Fragment"
+        android:name="nadirian.hamlet.android.encdecapp.fragments.crc32check_sum_fragment.CRC32Fragment"
+        android:label="fragment_c_r_c32"
+        tools:layout="@layout/fragment_c_r_c32" />
+    <fragment
+        android:id="@+id/CRC16Fragment"
+        android:name="nadirian.hamlet.android.encdecapp.fragments.crc16_checksum_fragment.CRC16Fragment"
+        android:label="fragment_c_r_c16"
+        tools:layout="@layout/fragment_c_r_c16" />
+    <fragment
+        android:id="@+id/DESCipherEncFragment"
+        android:name="nadirian.hamlet.android.encdecapp.fragments.data_encryption_standard_fragment.DESCipherEncFragment"
+        android:label="fragment_d_e_s_cipher_enc"
+        tools:layout="@layout/fragment_d_e_s_cipher_enc" />
+    <fragment
+        android:id="@+id/DESCipherDecFragment"
+        android:name="nadirian.hamlet.android.encdecapp.fragments.data_encryption_standard_fragment.DESCipherDecFragment"
+        android:label="fragment_d_e_s_cipher_dec"
+        tools:layout="@layout/fragment_d_e_s_cipher_dec" />
 </navigation>

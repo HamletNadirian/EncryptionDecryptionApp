@@ -17,11 +17,9 @@ object CaesarCipherEncryptor {
             else
                 textStr.add((s - number + shift).mod(26).plus(numberAsInt).toChar())
         }
-
         val to_array: Array<Char> = textStr.toTypedArray()
         var str = ""
         to_array.forEach { str += it }
-
         return str
     }
      fun decryptionCaesar(string: String, shift: Int): String {

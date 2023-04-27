@@ -1,7 +1,5 @@
 package nadirian.hamlet.android.encdecapp.model.affine_code
 
-import nadirian.hamlet.android.encdecapp.model.american_standard_code_for_information_interchange.ASCIIEncryptor.asciiToString
-
 object AffineCodeEncryptor {
     var aCode = 'A'.code
     fun encrypt(string: String, a: Int, b: Int): String {

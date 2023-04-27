@@ -1,11 +1,10 @@
-package nadirian.hamlet.android.encdecapp.fragments.base64_encode
+package nadirian.hamlet.android.encdecapp.fragments.base64_encode_fragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import nadirian.hamlet.android.encdecapp.R
 import nadirian.hamlet.android.encdecapp.databinding.FragmentBase64DecBinding
 import nadirian.hamlet.android.encdecapp.model.base64.Base64Encoding
 

@@ -1,4 +1,4 @@
-package nadirian.hamlet.android.encdecapp.fragments.advanced_encryption_standard
+package nadirian.hamlet.android.encdecapp.fragments.advanced_encryption_standard_fragment
 
 import android.content.Context
 import android.graphics.Color
@@ -11,7 +11,7 @@ import android.view.ViewGroup
 import android.view.inputmethod.EditorInfo
 import android.view.inputmethod.InputMethodManager
 import androidx.fragment.app.Fragment
-import nadirian.hamlet.android.encdecapp.fragments.advanced_encryption_standard.Encryptor.encrypt
+import nadirian.hamlet.android.encdecapp.model.advanced_encryption_standard.AESEncryption.encrypt
 import nadirian.hamlet.android.encdecapp.databinding.FragmentAesCipherEncBinding
 
 
