@@ -1,33 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".WelcomeFragment">
 
-    <Button
+    <ImageButton
         android:id="@+id/enc"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:scaleType="centerCrop"
+        android:backgroundTint="@color/white"
         android:text="Encryption"
-        android:backgroundTint="@color/black"
-
+        android:src="@drawable/ic_baseline_lock_24"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/dec"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/dec"
+
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Decryption"
-        android:backgroundTint="@color/black"
+        android:text="Encryption"
+        android:textColor="@color/black"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/enc"
+        app:layout_constraintStart_toStartOf="@+id/enc"
+        app:layout_constraintTop_toBottomOf="@+id/enc" />
 
+    <ImageButton
+        android:id="@+id/dec"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:scaleType="centerCrop"
+        android:text="Decryption"
+        android:backgroundTint="@color/white"
+        android:cropToPadding="true"
+        android:src="@drawable/ic_baseline_lock_open_24"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/enc"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Decryption"
+        android:textColor="@color/black"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/dec"
+        app:layout_constraintStart_toStartOf="@+id/dec"
+        app:layout_constraintTop_toBottomOf="@+id/dec" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -55,6 +55,15 @@
         <action
             android:id="@+id/action_selectCipherFragment_to_DESCipherEncFragment"
             app:destination="@id/DESCipherEncFragment" />
+        <action
+            android:id="@+id/action_selectCipherFragment_to_blowfishEncFragment"
+            app:destination="@id/blowfishEncFragment" />
+        <action
+            android:id="@+id/action_selectCipherFragment_to_binaryEncFragment"
+            app:destination="@id/binaryEncFragment" />
+        <action
+            android:id="@+id/action_selectCipherFragment_to_hexEncFragment"
+            app:destination="@id/hexEncFragment" />
     </fragment>
     <fragment
         android:id="@+id/cipherEncFragment"
@@ -87,6 +96,18 @@
         <action
             android:id="@+id/action_selectDecCipherFragment_to_DESCipherDecFragment"
             app:destination="@id/DESCipherDecFragment" />
+        <action
+            android:id="@+id/action_selectDecCipherFragment_to_blowFishDecFragment"
+            app:destination="@id/blowFishDecFragment" />
+        <action
+            android:id="@+id/action_selectDecCipherFragment_to_binaryDecFragment"
+            app:destination="@id/binaryDecFragment" />
+        <action
+            android:id="@+id/action_selectDecCipherFragment_to_binaryDecFragment2"
+            app:destination="@id/binaryDecFragment" />
+        <action
+            android:id="@+id/action_selectDecCipherFragment_to_hexDecFragment"
+            app:destination="@id/hexDecFragment" />
 
     </fragment>
     <fragment
@@ -174,4 +195,34 @@
         android:name="nadirian.hamlet.android.encdecapp.fragments.data_encryption_standard_fragment.DESCipherDecFragment"
         android:label="fragment_d_e_s_cipher_dec"
         tools:layout="@layout/fragment_d_e_s_cipher_dec" />
+    <fragment
+        android:id="@+id/blowFishDecFragment"
+        android:name="nadirian.hamlet.android.encdecapp.fragments.blowfish_fragment.BlowFishDecFragment"
+        android:label="fragment_blow_fish_dec"
+        tools:layout="@layout/fragment_blow_fish_dec" />
+    <fragment
+        android:id="@+id/blowfishEncFragment"
+        android:name="nadirian.hamlet.android.encdecapp.fragments.blowfish_fragment.BlowfishEncFragment"
+        android:label="fragment_blowfish_enc"
+        tools:layout="@layout/fragment_blowfish_enc" />
+    <fragment
+        android:id="@+id/binaryDecFragment"
+        android:name="nadirian.hamlet.android.encdecapp.fragments.binary_fragment.BinaryDecFragment"
+        android:label="fragment_binary_dec"
+        tools:layout="@layout/fragment_binary_dec" />
+    <fragment
+        android:id="@+id/binaryEncFragment"
+        android:name="nadirian.hamlet.android.encdecapp.fragments.binary_fragment.BinaryEncFragment"
+        android:label="fragment_binary_enc"
+        tools:layout="@layout/fragment_binary_enc" />
+    <fragment
+        android:id="@+id/hexDecFragment"
+        android:name="nadirian.hamlet.android.encdecapp.fragments.hex_fragment.HexDecFragment"
+        android:label="fragment_hex_dec"
+        tools:layout="@layout/fragment_hex_dec" />
+    <fragment
+        android:id="@+id/hexEncFragment"
+        android:name="nadirian.hamlet.android.encdecapp.fragments.hex_fragment.HexEncFragment"
+        android:label="fragment_hex_enc"
+        tools:layout="@layout/fragment_hex_enc" />
 </navigation>

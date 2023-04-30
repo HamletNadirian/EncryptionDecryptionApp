@@ -19,4 +19,5 @@ object UTF8Encryptor {
          var byteArray:ByteArray = byteList.toByteArray()
         return byteArray.toString(charset)
     }
+
 }

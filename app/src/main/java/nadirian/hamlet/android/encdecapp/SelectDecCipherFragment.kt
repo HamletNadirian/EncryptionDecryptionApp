@@ -1,11 +1,11 @@
 package nadirian.hamlet.android.encdecapp
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 
 class SelectDecCipherFragment : Fragment() {
@@ -24,6 +24,9 @@ class SelectDecCipherFragment : Fragment() {
         val selectDecForBase64Bt = view.findViewById<Button>(R.id.decBase64Bt)
         val selectDecForAffineCodeBt = view.findViewById<Button>(R.id.decAffineCodeBt)
         val selectDecUTF8CodeBt = view.findViewById<Button>(R.id.decUTF8CodeBt)
+        val selectBlowfishBt = view.findViewById<Button>(R.id.decBlowfishBt)
+        val selectBinaryBt = view.findViewById<Button>(R.id.decBinaryBt)
+        val selectHexBt = view.findViewById<Button>(R.id.decHexBt)
 
         selectDecForAESBt.setOnClickListener {
             view.findNavController()
@@ -52,6 +55,15 @@ class SelectDecCipherFragment : Fragment() {
         selectDecForDESBt.setOnClickListener {
             view.findNavController()
                 .navigate(R.id.action_selectDecCipherFragment_to_DESCipherDecFragment)
+        }
+        selectBlowfishBt.setOnClickListener {
+            view.findNavController().navigate(R.id.action_selectDecCipherFragment_to_blowFishDecFragment)
+        }
+        selectBinaryBt.setOnClickListener {
+            view.findNavController().navigate(R.id.action_selectDecCipherFragment_to_binaryDecFragment)
+        }
+        selectHexBt.setOnClickListener {
+            view.findNavController().navigate(R.id.action_selectDecCipherFragment_to_hexDecFragment)
         }
         return view
     }

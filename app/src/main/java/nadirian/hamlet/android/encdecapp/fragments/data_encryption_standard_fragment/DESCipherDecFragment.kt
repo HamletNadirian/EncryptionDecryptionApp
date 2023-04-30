@@ -25,7 +25,6 @@ class DESCipherDecFragment : Fragment() {
         val view = _binding!!.root
         var ciphertextForDecEdt = binding!!.ciphertextForDecEdt.text
         binding!!.sizeKeyForDecTv.text = 0.toString()
-
         binding!!.keyForDecEdt.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable) {}
 
@@ -54,10 +53,8 @@ class DESCipherDecFragment : Fragment() {
             }
             override fun onTextChanged(s: CharSequence, start: Int,
                                        before: Int, count: Int) {
-
                 var keyLength = binding!!.initVectorForDecEdt.length()
                 var convertToIntSize = (keyLength.toInt()*8)
-
                 if (convertToIntSize==64){
                     binding!!.sizeIVForDecTv.setTextColor(Color.GREEN);
                 }
@@ -67,7 +64,6 @@ class DESCipherDecFragment : Fragment() {
                 binding!!.sizeIVForDecTv.text=convertToIntSize.toString()
             }
         })
-
 
         binding!!.clearForDecBt.setOnClickListener {
             binding!!.keyForDecEdt.setText("")

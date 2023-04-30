@@ -101,6 +101,34 @@
                     android:backgroundTint="@color/black"
                     android:text="DES"
                     android:textSize="12sp" />
+
+                <Button
+                    android:id="@+id/decBlowfishBt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/decDESCipherBt"
+                    android:backgroundTint="@color/black"
+                    android:text="Blowfish"
+                    android:textSize="12sp" />
+                <Button
+                    android:id="@+id/decBinaryBt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/decBlowfishBt"
+                    android:backgroundTint="@color/black"
+                    android:text="Binary"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:id="@+id/decHexBt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/decBinaryBt"
+                    android:backgroundTint="@color/black"
+                    android:text="Hex"
+                    android:textSize="12sp" />
+
+
             </RelativeLayout>
         </LinearLayout>
     </LinearLayout>
