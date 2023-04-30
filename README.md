@@ -1,4 +1,4 @@
 # EncDecApp
 App for encryption/decryption
 
-<img src="https://github.com/HamletNadirian/EncDecApp/blob/master/result.png" width="220">
+<img src="https://github.com/HamletNadirian/EncDecApp/blob/master/result.png" width="1000">
